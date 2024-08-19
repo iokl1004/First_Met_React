@@ -1,0 +1,8 @@
+9. (실습) create-react-app
+Create-react-app? CRA는 웹 애플리케이션을 개발하는 데 필요한 모든 설정이 되어 있는 상태로 프로젝트를 생성해주는 도구입니다.
+
+# 사용법
+npx create-react-app <your-project-name>
+
+# 실제 사용 예제
+npx create-react-app first_met_react-my_app

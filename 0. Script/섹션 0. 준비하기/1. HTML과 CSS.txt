@@ -1,0 +1,30 @@
+1. HTML과 CSS
+Hyper Text Markup Language
+
+<HTML>
+</HTML>
+
+태그는 열었으면 꼭 닫아줘야 함!
+<br />
+
+웹 사이트의 뼈대를 구성하는 태그들
+<html>
+	<head>
+	</head>
+	<body>
+	</body>
+</html>
+
+실제로 웹사이트에서 보이는 콘텐츠가 들어감!
+
+SPA : Single Page Application
+하나의 페이지로 복잡한 페이지를 구현 할 수 있음.
+
+어떻게 이것이 가능한가?
+Multi Page Application : 사용자가 페이지를 요청할때 마다 화면에 새로운 페이지가 나오며, 각자의 HTML 파일을 가지고 있음.
+
+Single PAge Application : body태그 안에는 비어있는데, 그 안에 Component 라는것으로 채워줌.
+
+CSS : Cascading Style Sheets
+
+15강에 나오는 것만 봐도 간단한 웹 사이트는 구축할 수 있다!

@@ -1,0 +1,18 @@
+5. (실습) 개발환경 설정하기
+Node.js와 npm 설치하기
+Node.js? 는 자바스크립트로 네트워크 애플리케이션을 개발 할 수 있게끔 해주는 환경.
+npm (Node Package Manager)
+
+1. node.js와 npm 설치를 위해 하기의 링크 접속
+https://nodejs.org/en/
+
+2. LTS 버전 설치
+LTS 버전은 가장 안정화 버전, Current 버전은 가장 최신화 버전
+
+3. 설치 후, cmd창 Open 후 아래의 명령어 입력
+node --version
+npm -- version
+
+4. VS Code 설치하기
+VS Code같은것을 IDE 라고 불리며, 통합개발환경 (Integrated Development Environment) 이라는 의미이다.
+https://code.visualstudio.com/

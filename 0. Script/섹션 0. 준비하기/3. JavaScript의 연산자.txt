@@ -1,0 +1,87 @@
+3. JavaScript의 연산자
+
+대입 연산자는 항상 오른쪽에서 왼쪽 방향으로 흐름이 흘러감!
+왼쪽 = 오른쪽
+
+let a = 10;
+let b = 20;
+
+console.log(a);
+// 출력 결과 : 10
+
+console.log(b);
+// 출력 결과 : 20
+
+postfix 방식 : a++
+prefix 방식 : ++a
+
+let a = 1;
+let b = a++;
+
+cosnole.log(a, b);
+// 출력결과 : 2, 1
+
+let c= 1;
+let d = ++c;
+
+console.log(c, d);
+// 출력결과 : 2, 2
+
+---
+
+관계연산자는 비교 연산자 라고도 불린다.
+< , >, <=, >=
+a < b
+(a가 b보다 작거나 같다)
+
+a >= b
+(a가 b보다 크거나 같다)
+
+---
+동등 연산자 (Equalty operators)
+2개의 값이 다른지 같은지 확인이 가능하다
+a==b
+(a가 b와 같다)
+
+a!=b
+(a가 b와 같지 않다)
+---
+일치 연산자
+a===b
+(a가 b와 값과 자료형이 모두 같다)
+a!==b
+(a가 b와 값이나 자료형이 같지 않다)
+
+let a = 1;
+let b = '1';
+
+console.log(a == b);
+// true
+
+console.log(a != b);
+// false
+
+console.log(a === b);
+// false
+
+console.log(a !== b);
+// true
+---
+이진 논리 연산자
+a && b
+(a와 b가 모두 true 일 경우에만 true)
+
+a || b
+(a 또는 b가 true일 경우에는 true)
+---
+조건부 연산자
+(Conditional operator)
+
+let a = true;
+let b = false;
+
+console.log(a ? 1 : 2)
+// 출력결과 : 1
+
+console.log(b ? 1 : 2)
+// 출력결과 : 2
