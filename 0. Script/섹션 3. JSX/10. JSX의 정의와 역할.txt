@@ -1,0 +1,12 @@
+10. JSX의 정의와 역할
+
+JS는? JavaScript
+A syntax extension to JavaScript
+
+JSX란? JavaScript + XML/HTML 합친것이라 보면 된다!
+
+JSX의 역할? JSX는 내부적으로  XML, HTMl 코드를 JavaScript로 변환하는 과정을 거치게 된다!
+JSX코드를 JavaScript 코드로 변환하는 역할이 바로 React의 createElement라는 함수이다.
+
+리액트에서 JSX를 쓰는 것이 필수는 아니며, JSX를 사용하면 장점들이 많기 때문에 편리함!
+

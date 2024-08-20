@@ -24,17 +24,17 @@
 | 7    | 섹션 1. 리액트 소개                 | 리액트의 장점과 단점                                                | 20240819(월) |
 | 8    | 섹션 2. 리액트 시작하기             | (실습) 직접 리액트 연동하기                                         | 20240819(월) |
 | 9    | 섹션 2. 리액트 시작하기             | (실습) create-react-app                                             | 20240819(월) |
-| 10   | 섹션 3. JSX                         | JSX의 정의와 역할                                                   |              |
-| 11   | 섹션 3. JSX                         | JSX의 장점 및 사용법                                                |              |
-| 12   | 섹션 3. JSX                         | (실습) JSX 코드 작성해보기                                          |              |
-| 13   | 섹션 4. Rendering Elements          | Elements의 정의와 생김새                                            |              |
-| 14   | 섹션 4. Rendering Elements          | Elements의 특징 및 렌더링하기                                       |              |
-| 15   | 섹션 4. Rendering Elements          | (실습) 시계 만들기                                                  |              |
-| 16   | 섹션 5. Components and Props        | Components와 Props의 정의                                           |              |
-| 17   | 섹션 5. Components and Props        | Props의 특징 및 사용법                                              |              |
-| 18   | 섹션 5. Components and Props        | Component 만들기 및 렌더링                                          |              |
-| 19   | 섹션 5. Components and Props        | Component 합성과 추출                                               |              |
-| 20   | 섹션 5. Components and Props        | (실습) 댓글 컴포넌트 만들기                                         |              |
+| 10   | 섹션 3. JSX                         | JSX의 정의와 역할                                                   | 20240820(화) |
+| 11   | 섹션 3. JSX                         | JSX의 장점 및 사용법                                                | 20240820(화) |
+| 12   | 섹션 3. JSX                         | (실습) JSX 코드 작성해보기                                          | 20240820(화) |
+| 13   | 섹션 4. Rendering Elements          | Elements의 정의와 생김새                                            | 20240820(화) |
+| 14   | 섹션 4. Rendering Elements          | Elements의 특징 및 렌더링하기                                       | 20240820(화) |
+| 15   | 섹션 4. Rendering Elements          | (실습) 시계 만들기                                                  | 20240820(화) |
+| 16   | 섹션 5. Components and Props        | Components와 Props의 정의                                           | 20240820(화) |
+| 17   | 섹션 5. Components and Props        | Props의 특징 및 사용법                                              | 20240820(화) |
+| 18   | 섹션 5. Components and Props        | Component 만들기 및 렌더링                                          | 20240820(화) |
+| 19   | 섹션 5. Components and Props        | Component 합성과 추출                                               | 20240820(화) |
+| 20   | 섹션 5. Components and Props        | (실습) 댓글 컴포넌트 만들기                                         | 20240820(화) |
 | 21   | 섹션 6. State and Lifecycle         | State와 Lifecycle의 정의                                            |              |
 | 22   | 섹션 6. State and Lifecycle         | (실습) state 사용하기                                               |              |
 | 23   | 섹션 7. Hooks                       | Hooks의 개념과 useState, useEffect                                  |              |
