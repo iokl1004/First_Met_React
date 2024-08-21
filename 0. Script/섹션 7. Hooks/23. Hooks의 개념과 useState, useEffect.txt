@@ -1,0 +1,54 @@
+22. Hooks의 개념과 useState, useEffect
+
+Hook? 어떤 기능에 마치 갈고리를 거는것처럼 끼어 들어가 같이 수행되는 것을 의미함.
+Function Component : state 사용 불가, Lifecyle에 따른 기능 구현 불가
+Class Component : 생성자에서 state를 정의, setState() 함수를 통해 state 업데이트, Lifecycle methods 제공
+
+개발자가 커스텀훅을 만들 수는 있지만 앞에 use를 붙여야함.
+
+useState? state를 사용하기 위한 Hook.
+useState() 사용법
+const [변수명, set함수명] = useState(초기값);
+
+const [count, setCount] = useState(0);
+
+return (
+	<div>
+		<p>총 {count}번 클릭했습니다.</P>
+		<button onClick={() => setCount(count + 1)}>
+			클릭
+		</button>
+	</div>
+)
+
+---
+
+useEffect()? Side Effect를 수행하기 위한 Hook
+Side Effect = 부작용
+단, 리액트에서 말하는 사이드 이펙트는 효과, 영향에 가깝다!
+예를들면 서버에서 데이터를 받아오거나, 수동으로 DOM을 변경하는 등의 작업을 의미함.
+다른 컴포넌트에 영향을 미칠 수 있으며, 렌더링 중에는 작업이 완료될 수 없기 때문.
+리액트의 함수 컴포넌트에서 Side Effect를 실행할 수 있게 해주는 Hook.
+
+useEffect() 사용법
+useEffect(이펙트 함수, 의존성 배열);
+의존성 배열? 이 이펙트가 의존하고 있는 배열인데, 배열 안에 있는 변수중에 하나라도 값이 변경되었을 때 이펙트 함수가 실행이 됨.
+
+의존성 배열을 생략하면 컴포넌트가 업데이트 될 때 마다 호출 됨.
+useEffect(이펙트 함수);
+
+Effect function이 mount, unmount 시에 단 한 번씩만 실행됨.
+useEffect(이펙트 함수, []);
+
+useEffect(() => {
+	// 컴포넌트가 마운트 된 이후,
+	// 의존성 배열에 있는 변수들 중, 하나라도 값이 변경되었을 때 실행됨
+	// 의존성 배열에 빈 배열([])을 넣으면 마운트와 언마운트시에 단 한 번씩만 실행됨
+	// 의존성 배열 생략 시 컴포넌트 업데이트 시마다 실행됨
+	...
+	
+	return () => {
+		// 컴포넌트가 마운트 해제되기 전에 실행됨
+	...
+	}
+}, [의존성 변수1, 의존성 변수2, ...]);

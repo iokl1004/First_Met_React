@@ -15,6 +15,8 @@
 
 20240820(화) 진도율 : 20강/62강 (32.26%)
 
+20240821(수) 진도율 : 28강/62강 (45.16%)
+
 | 번호 | 섹션                                | 강의                                                                | 완료일자     |
 | ---- | ----------------------------------- | ------------------------------------------------------------------- | ------------ |
 | 1    | 섹션 0. 준비하기                    | HTML과 CSS                                                          | 20240819(월) |
@@ -37,14 +39,14 @@
 | 18   | 섹션 5. Components and Props        | Component 만들기 및 렌더링                                          | 20240820(화) |
 | 19   | 섹션 5. Components and Props        | Component 합성과 추출                                               | 20240820(화) |
 | 20   | 섹션 5. Components and Props        | (실습) 댓글 컴포넌트 만들기                                         | 20240820(화) |
-| 21   | 섹션 6. State and Lifecycle         | State와 Lifecycle의 정의                                            |              |
-| 22   | 섹션 6. State and Lifecycle         | (실습) state 사용하기                                               |              |
-| 23   | 섹션 7. Hooks                       | Hooks의 개념과 useState, useEffect                                  |              |
-| 24   | 섹션 7. Hooks                       | useMemo, useCallback, useRef                                        |              |
-| 25   | 섹션 7. Hooks                       | Hook의 규칙과 Custom Hook 만들기                                    |              |
-| 26   | 섹션 7. Hooks                       | (실습) Hooks 사용해보기                                             |              |
-| 27   | 섹션 8. Handling Events             | Event의 정의 및 Event 다루기                                        |              |
-| 28   | 섹션 8. Handling Events             | (실습) 클릭 이벤트 처리하기                                         |              |
+| 21   | 섹션 6. State and Lifecycle         | State와 Lifecycle의 정의                                            | 20240821(수) |
+| 22   | 섹션 6. State and Lifecycle         | (실습) state 사용하기                                               | 20240821(수) |
+| 23   | 섹션 7. Hooks                       | Hooks의 개념과 useState, useEffect                                  | 20240821(수) |
+| 24   | 섹션 7. Hooks                       | useMemo, useCallback, useRef                                        | 20240821(수) |
+| 25   | 섹션 7. Hooks                       | Hook의 규칙과 Custom Hook 만들기                                    | 20240821(수) |
+| 26   | 섹션 7. Hooks                       | (실습) Hooks 사용해보기                                             | 20240821(수) |
+| 27   | 섹션 8. Handling Events             | Event의 정의 및 Event 다루기                                        | 20240821(수) |
+| 28   | 섹션 8. Handling Events             | (실습) 클릭 이벤트 처리하기                                         | 20240821(수) |
 | 29   | 섹션 9. Conditional Rendering       | Conditional Rendering의 정의와 Inline Conditions                    |              |
 | 30   | 섹션 9. Conditional Rendering       | (실습) 로그인 여부를 나타내는 툴바 만들기                           |              |
 | 31   | 섹션 10. List and Keys              | List와 Key                                                          |              |

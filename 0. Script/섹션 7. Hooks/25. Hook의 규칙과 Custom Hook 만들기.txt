@@ -1,0 +1,28 @@
+25. Hook의 규칙과 Custom Hook 만들기
+
+Hook은 무조건 최상위 레벨에서만 호출해야 한다.
+Hook은 컴포넌트가 렌더링될 때마다 매번 같은 순서로 호출되어야 한다.
+
+잘못된 Hook 사용법
+function MyComponent(props) {
+	const [name, setName] = useState('Inje');
+
+	if (name !== '') {
+		useEffect(() => {
+			...
+		});
+	}
+	...
+}
+---
+리액트 함수 컴포넌트에서만 Hook을 호출해야 한다.
+eslint-plugin-react-hooks 라는 플러그인이 있는데, React 컴포넌트가 Hook의 규칙을 따르는지 아닌지 분석 할 수 있음.
+---
+Custom Hook 만들기
+여러 컴포넌트에서 반복적으로 사용되는 로직을 Hook으로 만들어 재사용 하기 위함.
+
+이름이 use로 시작하고 내부에서 다른 Hook을 호출하는 하나의 자바스크립트 함수
+
+customhook의 이름은 꼭 use로 시작해야함.
+여러개의 컴포넌트에서 하나의 Custom Hook을 사용할 때 컴포넌트 내부에 있는 모든 state와 effects는 전부 분리되어 있다.
+그렇다면 커스텀 훅은 어떻게 state를 분리하는건가요? React 컴포넌트는 각각의 커스텀 훅 호출에 대해서 분리된 스테이트를 얻게 되기 때움임.
