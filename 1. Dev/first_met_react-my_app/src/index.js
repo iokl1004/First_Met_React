@@ -11,16 +11,43 @@ import CommentList from './chapter_05/CommentList';
 import Notification from './chapter_06/Notification';
 import Accommodate from './chapter_07/Accommodate';
 import ConfirmButton from './chapter_08/ConfirmButton';
+import LandingPage from './chapter_09/LandingPage';
+import AttendanceBook from './chapter_10/AttendanceBook';
+import SignUp from './chapter_11/SignUp';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// chapter_08
+// chapter_11
 root.render(
   <React.StrictMode>
-    <ConfirmButton />
+    <SignUp />
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+// chapter_10
+// root.render(
+//   <React.StrictMode>
+//     <AttendanceBook />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+
+// chapter_09
+// root.render(
+//   <React.StrictMode>
+//     <LandingPage />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+
+// chapter_08
+// root.render(
+//   <React.StrictMode>
+//     <ConfirmButton />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
 
 // chapter_07
 // root.render(

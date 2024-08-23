@@ -1,0 +1,17 @@
+35. Form과 Controlled Component
+
+Form이란? 우리말로 하면 양식 이라는 뜻을 가지고 있으며, 사용자로부터 입력을 받기 위해 사용!
+리액트는 컴포넌트 내부에서 state를 통해 데이터를 관리를 하지만,
+HTML은 엘리먼트 내부에 각각의 state가 존재함.
+
+Controlled Components는 사용자가 입력한 값에 접근하고 제어 할 수 있도록 해주는 컴포넌트.
+
+HTML From은 자체적으로 state를 관리
+<input>
+<textarea>
+<select>
+
+Controlled Component는 모든 데이터를 state에서 관리
+Component
+state = {}
+setState()
