@@ -1,0 +1,125 @@
+40. (실습) 섭씨온도와 화씨온도 표시하기
+
+(TemperatureInput.jsx)
+temperatureInput 컴포넌트는 props로 scale과 temperature를 받아서 표시해 주며 온도값이 변경되었을 때에는 props에 onTemperatureChange 함수를 호출하여 상위 컴포넌트로 변경된 값을 전달하게 됨.
+const scaleNames = {
+    c : "섭씨",
+    f : "화씨",
+};
+
+function TemperatureInput(props) {
+    const handleChange = (e) => {
+        props.onTemperatureChange(e.target.value);
+    };
+
+    return (
+        <fieldset>
+            <legend>
+                온도를 입력해주세요(단위: {scaleNames[props.scale]})
+            </legend>
+            <input value={props.temperature} onChange={handleChange} />
+        </fieldset>
+    );
+}
+
+export default TemperatureInput;
+---
+(Calculator.jsx)
+TemperatureInput 컴포넌트를 사용하여 섭씨와 화씨 두가지의 입력 양식을 제공하며, 또한 모든 온도를 섭씨로 변환하여 BoilingVerdict 컴포넌트에 전달 해줌으로써 물이 끓는지 아닌지 출력함.
+
+import { useState } from "react";
+import TemperatureInput from "./TemperatureInput";
+
+function BoilingVerdict(props) {
+    if (props.celsius >= 100) {
+        return <p>물이 끓습니다.</p>
+    }
+    return <p>물이 끓지 않습니다.</p>
+}
+
+function toCelsius(fahrenheit) {
+    return ((fahrenheit - 32) * 5) /9;
+}
+
+function toFahrenheit(celsius) {
+    return (celsius * 9) / 5 + 32;
+}
+
+function tryConvert(temperature, convert) {
+    const input = parseFloat(temperature);
+    if (Number.isNaN(input)) {
+        return "";
+    }
+    const output = convert(input);
+    const rounded = Math.round(output * 1000) / 1000;
+    return rounded.toString();
+}
+
+function Calculator(props) {
+    const [temperature, setTemperature] = useState("");
+    const [scale, setScale] = useState("c");
+
+    const handleCelsiusChange = (temperature) => {
+        setTemperature(temperature);
+        setScale("c");
+    };
+
+    const handleFahrenheitChange = (temperature) => {
+        setTemperature(temperature);
+        setScale("f");
+    }
+
+    const celsius =
+        scale === "f" ? tryConvert(temperature, toCelsius) : temperature;
+    const fahrenheit =
+        scale === "c" ? tryConvert(temperature, toFahrenheit) : temperature;
+
+    return (
+        <div>
+            <TemperatureInput
+                scale="c"
+                temperature={celsius}
+                onTemperatureChange={handleCelsiusChange}
+            />
+            <TemperatureInput
+                scale="f"
+                temperature={fahrenheit}
+                onTemperatureChange={handleFahrenheitChange}
+            />
+            <BoilingVerdict celsius={parseFloat(celsius)} />
+        </div>
+    );
+}
+
+export default Calculator;
+---
+(index.js)
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { createRoot } from "react-dom/client";
+
+import Library from './chapter_03/Library';
+import Clock from './chapter_04/Clock';
+import CommentList from './chapter_05/CommentList';
+import Notification from './chapter_06/Notification';
+import Accommodate from './chapter_07/Accommodate';
+import ConfirmButton from './chapter_08/ConfirmButton';
+import LandingPage from './chapter_09/LandingPage';
+import AttendanceBook from './chapter_10/AttendanceBook';
+import SignUp from './chapter_11/SignUp';
+import Calculator from './chapter_12/Calculator';
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// chapter_12
+root.render(
+  <React.StrictMode>
+    <Calculator />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+reportWebVitals();

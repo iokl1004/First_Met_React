@@ -1,0 +1,42 @@
+44. Context API
+
+Context생성
+const MyContext = React.createContext(기본값);
+
+만약 상위 레벨에 매칭되는 Provider가 없다면 기본값이 사용 됨!
+기본값으로 undefined를 넣으면 기본값이 사용되지 않음.
+
+React,createContext 함수를 사용해서 컨텍스트를 만들었다면 이제 하위 컴포넌트들이 해당 컨텍스트의 데이터를 받을 수 있도록 설정해줘야함.
+이를 사용하는것이 바로 Provider이며, 데이터를 제공해주는 컴포넌트 라는 의미로 이해하면 됨.
+
+Provider 사용
+<MyContext.Provider value={/* some value */}>
+하나의 프로바이더 컴포넌트는 여러개의 컨슈밍 컴포넌트와 연결될 수 있으며, 여러개의 프로바이더 컴포넌트는 중첩되어 사용 될 수 있음.
+
+Provider value에서 주의해야할 사항
+Provider 컴포넌트가 재렌더링될 때마다 모든 하위 consumer 컴포넌트가 재렌더링 됨.
+
+Consumer 컴포넌트는 앞에서 설명한 것처럼 컨텍스트의 데이터를 구독하는 컴포넌트임.
+컴포넌트에서는 바로 이 Context.Consumer를 사용하여 컨텍스트를 구독할 수 있음.
+
+여러 개의 Context사용하려면 context.provider를 중첩해서 사용하는 방식으로 구현 할 수 있음.
+
+useContext는 함수 컴포넌트에서 컨텍스를 쉽게 사용 할 수 있게 해준다.
+React.createContext 함수 호출로 생성된 컨텍스트 객체를 인자로 받아서 현재 컨텍스트의 값을 리턴함.
+useContextHook을 사용하면 컨텍스트의 값을 다른 방식과 동일하게 컴포넌트 트리 상에서 가장 가까운 상위 프로바이더로부터 받아오게 되며, 만약 컨텍스트의 값이 변경되면 변경된 값과 함께 useContextHook을 사용하는 컴포넌트가 재 렌더링 됨. 그렇기 때문에 만약 useContextHook을 사용하는 컴포넌트의 렌더링이 꽤 무거운 작업일 경우에는 별도로 최적화 작업을 해줄 필요가 있음. 또한, useContextHook을 사용할 때에는 파라미터로 context 객체를 넣어줘야 한다는것을 기억하자!
+
+useContext() Hook을 사용한 예시
+function MyComponent(props) {
+	const value = useContext(MyContext);
+
+	return (
+		...
+	)
+}
+
+// 올바른 사용법
+useContext(MyContext);
+
+// 잘못된 사용법
+useContext(MyContext.Consumer);
+useContext(MyContext.Provider);

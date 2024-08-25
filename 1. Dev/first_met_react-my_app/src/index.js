@@ -14,16 +14,43 @@ import ConfirmButton from './chapter_08/ConfirmButton';
 import LandingPage from './chapter_09/LandingPage';
 import AttendanceBook from './chapter_10/AttendanceBook';
 import SignUp from './chapter_11/SignUp';
+import Calculator from './chapter_12/Calculator';
+import ProfileCard from './chapter_13/ProfileCard';
+import DarkORLight from './chapter_14/DarkORLight';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// chapter_11
+// chapter_14
 root.render(
   <React.StrictMode>
-    <SignUp />
+    <DarkORLight />
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+// chapter_13
+// root.render(
+//   <React.StrictMode>
+//     <ProfileCard />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+
+// chapter_12
+// root.render(
+//   <React.StrictMode>
+//     <Calculator />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+
+// chapter_11
+// root.render(
+//   <React.StrictMode>
+//     <SignUp />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
 
 // chapter_10
 // root.render(

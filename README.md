@@ -59,14 +59,14 @@
 | 35   | 섹션 12. Forms                      | Form과 Controlled Component                                         | 20240823(금) |
 | 36   | 섹션 12. Forms                      | 다양한 Forms                                                        | 20240823(금) |
 | 37   | 섹션 12. Forms                      | (실습) 사용자 정보 입력 받기                                        | 20240823(금) |
-| 38   | 섹션 13. Lifting State Up           | Shared State                                                        |              |
-| 39   | 섹션 13. Lifting State Up           | 하위 컴포넌트에서 State 공유하기                                    |              |
-| 40   | 섹션 13. Lifting State Up           | (실습) 섭씨온도와 화씨온도 표시하기                                 |              |
-| 41   | 섹션 14. Composition vs Inheritance | Composition 방법과 Inheritance                                      |              |
-| 42   | 섹션 14. Composition vs Inheritance | (실습) Card 컴포넌트 만들기                                         |              |
-| 43   | 섹션 15. Context                    | Context란?                                                          |              |
-| 44   | 섹션 15. Context                    | Context API                                                         |              |
-| 45   | 섹션 15. Context                    | (실습) Context를 사용하여 테마 변경 기능 만들기                     |              |
+| 38   | 섹션 13. Lifting State Up           | Shared State                                                        | 20240825(일) |
+| 39   | 섹션 13. Lifting State Up           | 하위 컴포넌트에서 State 공유하기                                    | 20240825(일) |
+| 40   | 섹션 13. Lifting State Up           | (실습) 섭씨온도와 화씨온도 표시하기                                 | 20240825(일) |
+| 41   | 섹션 14. Composition vs Inheritance | Composition 방법과 Inheritance                                      | 20240825(일) |
+| 42   | 섹션 14. Composition vs Inheritance | (실습) Card 컴포넌트 만들기                                         | 20240825(일) |
+| 43   | 섹션 15. Context                    | Context란?                                                          | 20240825(일) |
+| 44   | 섹션 15. Context                    | Context API                                                         | 20240825(일) |
+| 45   | 섹션 15. Context                    | (실습) Context를 사용하여 테마 변경 기능 만들기                     | 20240825(일) |
 | 46   | 섹션 16. Styling                    | CSS와 selector                                                      |              |
 | 47   | 섹션 16. Styling                    | 레이아웃과 관련된 CSS 속성                                          |              |
 | 48   | 섹션 16. Styling                    | Font와 관련된 CSS 속성, 기타 많이 사용하는 CSS 속성                 |              |
