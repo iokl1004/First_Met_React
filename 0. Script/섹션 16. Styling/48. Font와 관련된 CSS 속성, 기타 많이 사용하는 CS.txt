@@ -1,0 +1,58 @@
+48. Font와 관련된 CSS 속성, 기타 많이 사용하는 CSS 속성
+
+font-family
+어떤 글꼴을 사용할 것인지를 결정하는 속성
+주의할 점은 글꼴의 이름에 띄어쓰기가 들어갈 경우 큰따옴표로 묶어 주어야함.
+
+일반적인 글꼴분류(Generic font family)
+serif
+ - 각 글자의 모서리에 작은 테두리를 갖고 있는 평태의 글꼴.
+sans-serif
+ - 모서리에 테두리가 없이 깔끔한 선을 가진 글꼴.
+ - 컴퓨터 모니터에서는 Serif 보다 가독성이 좋음.
+monospace
+ - 모든 글자가 같은 가로 길이를 가지는 글꼴. 코딩을 할 때 주로 사용.
+cursive
+ - 사람이 쓴 손글씨 모양의 글꼴.
+fantasy
+ - 장식이 들어간 형태의 글꼴.
+---
+font-size
+글꼴의 크기와 관련된 속성
+px (pixel) : 고정된 값이기 때문에 브라우저를 통해 크기를 바꿀 수 없음.
+em : m이라는 단위는 사용자가 브라우저에서 글꼴의 크기를 변경할 수 있게 해줌.
+rem
+vw(viewprot width)
+브라우저의 기본 글꼴 크기 1m은 16픽셀과 동일함.
+---
+font-weight
+글꼴의 두께와 관련된 속성
+font-weight : bold
+font-weight : 500
+---
+font-style
+이름 그대로 글꼴의 스타일을 지정하기 위한 속성임
+
+normal
+  - 일반적인 글자의 형태를 의미.
+italic
+ - 글자가 기울어진 형태로 나타남.
+ - 별도로 기울어진 형태의 글자들을 직접 디자인해서 만든 것.
+oblique
+ - 글자가 비스듬한 형태로 나타남.
+ - 그냥 글자를 기울인 것.
+---
+가장 많이 사용되는 속성
+
+backgorund-color
+만약 배경색을 투명하게 만들고 싶을 경우에는 값에 transparent 키워드를 사용하면 됨.
+backgorund-color : color | transparent;
+
+border 속성
+말 그대로 테두리를 위한 속성
+
+border 속성 사용 예시
+div {
+	vorder : border-width border-style border-color;
+}
+

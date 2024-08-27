@@ -1,0 +1,100 @@
+50. (실습) styled-components를 사용하여 스타일링 해보기
+
+styled-components 설치
+npm install --save styled-components
+
+---
+(Blocks.jsx)
+import styled from "styled-copmponents";
+
+const Wrapper = styled.div`
+    padding : 1rem;
+    display : flex;
+    flex-direction : row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color : lightgrey;
+`;
+
+const Block = styled.div`
+    padding: ${(props) => props.padding};
+    border : 1px solid black;
+    border-radius: 1rem;
+    background-color : ${(props) => props.backgroundColor};
+    color : white;
+    font-size : 2rem;
+    font-weight: bold;
+    text-align : center;
+`;
+
+const blockItems = [
+    {
+        label: "1",
+        padding : "1rem",
+        backgroundColor: "red",
+    },
+    {
+        label: "2",
+        padding : "3rem",
+        backgroundColor: "green",
+    },
+    {
+        label: "3",
+        padding : "2rem",
+        backgroundColor: "blue",
+    },
+];
+
+function Blocks(props) {
+    return (
+        <Wrapper>
+            {blockItems.map((blockItems) => {
+                return (
+                    <Block
+                        padding={blockItems.padding}
+                        backgroundColor={blockItems.backgroundColor}
+                    >
+                        {blockItems.label}
+                    </Block>
+                );
+            })}
+        </Wrapper>
+    );
+}
+
+export default Blocks;
+---
+(index.jsx)
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { createRoot } from "react-dom/client";
+
+import Library from './chapter_03/Library';
+import Clock from './chapter_04/Clock';
+import CommentList from './chapter_05/CommentList';
+import Notification from './chapter_06/Notification';
+import Accommodate from './chapter_07/Accommodate';
+import ConfirmButton from './chapter_08/ConfirmButton';
+import LandingPage from './chapter_09/LandingPage';
+import AttendanceBook from './chapter_10/AttendanceBook';
+import SignUp from './chapter_11/SignUp';
+import Calculator from './chapter_12/Calculator';
+import ProfileCard from './chapter_13/ProfileCard';
+import DarkORLight from './chapter_14/DarkORLight';
+import Blocks from './chapter_15/Blocks';
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// chapter_14
+root.render(
+  <React.StrictMode>
+    <Blocks />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+reportWebVitals();

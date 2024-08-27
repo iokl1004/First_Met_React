@@ -1,0 +1,92 @@
+47. 레이아웃과 관련된 CSS 속성
+
+레이아웃과 관련된 속성
+화면에 Element들을 어떻게 배치할 것 인가? 레이아웃!
+디스플레이 속성은 엘리먼트를 어떻게 표시 할 지 그 방법에 관한 속성
+
+display: none;
+ - element를 화면에서 숨기기 위해 사용.
+ - <script> 태그의 display 속성 기본값은 display:none;
+display : block;
+ - 블록 단위로 element를 배치.
+ - <p>, <div>, <h1>~<h6> 태그의 dispaly 속성 기본값이 display: block;
+display : inline;
+ - element를 라인안에 넣는 것.
+ - <span> 태그의 display 속성 기본값이 display: inline;
+display : flex;
+ - element를 블록 레벨의 flex container로 표시.
+ - container이기 때문에 내부에 다른 element들을 포함.
+---
+visibility : 엘리먼트를 화면에 보여주거나 감추기 위해 사용하는 속성
+
+visibility : visible;
+ - element를 화면에 보이게 하는 것.
+visibility : hidden;
+ - 화면에서 안보이게 감추는 것.
+ - element를 안 보이게만 하는 것이고, 화면에서의 영역은 그대로 차지.
+---
+posiotion : 엘리먼트를 어떻게 위치시킬 것인지 즉, 포지셔닝을 어떻게 할 것인지를 정의하기 위해 사용.
+
+static
+ - 기본값으로 element를 원래의 순서대로 위치시킴.
+fixed
+ - element를 브라우저 window에 상대적으로 위치시킴.
+relative
+ - element를 보통의 위치에 상대적으로 위치시킴.
+absolute
+ - element를 절대 위치에 위치시킴. (이때 기준은 첫번째 상위 엘리먼트가 됨.)
+---
+가로, 세로 길이와 관련된 속성
+
+width
+height
+min-width
+min-height
+max-width
+max-height
+---
+Flexbox
+Flexbox가 나오기 전에는 앞에서 배운 것처럼 display-block이나
+display-inline 등의 속성을 활용해서 레이아웃을 구성하였음.
+하지만 이런 속성들은 다양한 레이아웃을 자유롭게 구성하는 데 불편한 부분이 있었고 이러한
+문제를 해결하기 위해서 Flexbox가 나오게 됨.
+
+flex-directiuon 속성의 대표적인 값들
+row
+ - 기본값이며 아이템을 행(row)을 따라 가로 순서대로 왼쪽부터 배치.
+column
+ - 아이템을 열(column)을 따라 순서대로 위쪽부터 배치.
+row-reverse
+ - 아이템을 행(row)의 역(reverse)방향으로 오른쪽부터 배치.
+column-reverse
+ - 아이템을 열(column)의 역(reverse)방향으로 아래쪽부터 배치.
+---
+align-items
+컨테이너 내에서 아이템을 어떻게 정렬, 얼라인 할 것인지를 결정하며, 이때 정렬은 크로스 액시스를 기준으로 하게 됨.
+
+align-items 속성의 대표적인 값들
+stretch
+ - 기본값으로써 아이틈을 늘려서(stretch) 컨테이너를 가득 채움.
+flex-start
+ - cross axis의 시작 지점으로 아이템을 정렬.
+center
+ - cross axis의 중앙으로 아이템을 정렬.
+flex-end
+ - cross axis의 끝 지점으로 아이템을 정렬.
+baseline
+ - 아이템을 baseline 기준으로 정렬.
+---
+justify content는 컨테이너 내에서 아이템들을 어떻게 나란히 맞출 것 인지를 결정함.
+이때 맞추는 기준은 align items와 반대로 main axis를 기준으로 하게됨.
+
+flex-start
+ - main axis의 시작 지점으로 아이템을 맞춤.
+center
+ - main axis의 중앙으로 아이템을 맞춤.
+flex-end
+ - main axis의 끝 지점으로 아이템을 맞춤.
+space-between
+ - main axis를 기준으로 첫 아이템은 시작 지점에 맞추고 마지막 아이템은 끝 지점에 맞추며, 중간에 있는 아이템들 사이(between)의 간격(space)이 일정하게 되도록 맞춤.
+space-around
+ - main axis를 기준으로 각 아이템의 주변(around) 간격(space)를 동일하게 맞춤.
+
