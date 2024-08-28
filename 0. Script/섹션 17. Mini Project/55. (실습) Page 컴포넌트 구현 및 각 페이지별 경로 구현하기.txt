@@ -1,0 +1,244 @@
+55. (실습) Page 컴포넌트 구현 및 각 페이지별 경로 구성하기
+
+메인 페이지 컴포넌트는 우리가 만들 미니 블로그에 사용자가 처음 접속했을 때 보게 될 페이지.
+글을 작성할 수 있는 버튼과 글 목록을 보여줘야함.
+(실습)MainPage 만들기
+(src/component/page/MainPage.jsx)
+
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import PostList from '../list/PostList';
+import Button from '../ui/Button';
+import data from '../../data.json';
+
+const Wrapper = styled.div`
+    padding: 16px;
+    width: calc(100% - 32px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+const Container = styled.div`
+    width: 100%;
+    max-width: 720px;
+
+    :not(:last-child) {
+        margin-bottom: 16px;
+    }
+`;
+
+// 앞에서 만든 버튼 컴포넌트를 이용해서 글 작성하기 페이지로 이동할 수 있게 구현하고 있음.
+// 앞에서 만들어준 포스트리스트 컴포넌트를 이용해서 글 목록을 표시하고 있음.
+// 페이지 이동을 위해 react-router-dom에 use-navigate-hook을 사용하였음.
+function MainPage(props) {
+    const navigate = useNavigate();
+
+    return (
+        <Wrapper>
+            <Container>
+                <Button
+                    title='글 작성하기'
+                    onClick={() => {
+                        navigate('/post-write');
+                    }}
+                />
+
+                <PostList
+                    posts={data}
+                    onClickItem={(item) => {
+                        navigate(`/post/${item.id}`);
+                    }}
+                />
+            </Container>
+        </Wrapper>
+    );
+}
+
+export default MainPage;
+---
+(실습) PostWritePage 만들기
+(src/component/page/PostWritePage.jsx)
+
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import TextInput from '../ui/TextInput';
+import Button from '../ui/Button';
+
+const Wrapper = styled.div`
+    padding: 16px;
+    width: calc(100% - 32px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+const Container = styled.div`
+    width: 100%;
+    max-width: 720px;
+
+    :not(:last-child) {
+        margin-bottom: 16px;
+    }
+`;
+
+// 두개의 스테이트를 가지고 있음.
+// 하나는 글의 제목을 위한 state
+// 다른 하나는 글의 내용을 위한 스테이트임.
+// 두개의 state 모두 useState 훅을 이용하여 선언한 것을 볼 수 있음.
+// 그리고 실제 화면에 나타나는 부분은 TextInpust 컴포넌트를 사용해서 글의 제목과 내용을 각각 입력 받을 수 있도록 구성함.
+function PostWritePage(props) {
+    const navigate = useNavigate();
+
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
+
+    return (
+        <Wrapper>
+            <Container>
+                <TextInput
+                    height={20}
+                    value={title}
+                    onChange={(event) => {
+                        setTitle(event.target.value);
+                    }}
+                />
+
+                <TextInput
+                    height={480}
+                    value={content}
+                    onChange={(event) => {
+                        setContent(event.target.value);
+                    }}
+                />
+
+                <Button
+                    title='글 작성하기'
+                    onClick={() => {
+                        navigate('/');
+                    }}
+                />
+            </Container>
+        </Wrapper>
+    );
+}
+
+export default PostWritePage;
+---
+(실습) PostViewPage 만들기
+글을 볼 수 있게 해주는 컴포넌트이기 때문에 글과 댓글을 보여주어야 하며, 댓글 작성 기능도 제공해야함.
+(src/component/page/PostViewPage.jsx)
+
+import { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import CommentList from '../list/CommentList';
+import TextInput from '../ui/TextInput';
+import Button from '../ui/Button';
+import data from '../../data.json';
+
+const Wrapper = styled.div`
+    padding: 16px;
+    width: calc(100% - 32px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+const Container = styled.div`
+    width: 100%;
+    max-width: 720px;
+
+    :not(:last-child) {
+        margin-bottom: 16px;
+    }
+`;
+
+const PostContainer = styled.div`
+    padding: 8px 16px;
+    border: 1px solid grey;
+    border-radius: 8px;
+`;
+
+const TitleText = styled.p`
+    font-size: 28px;
+    font-weight: 500;
+`;
+
+const ContentText = styled.p`
+    font-size: 20px;
+    line-height: 32px;
+    white-space: pre-wrap;
+`;
+
+const CommentLabel = styled.p`
+    font-size: 16px;
+    font-weight: 500;
+`;
+
+// 먼저 props로 전달받은 글의 아이디를 이용해서 전체 데이터에서 해당 되는 글을 찾음.
+// 그리고 찾은 글의 제목, 내용, 댓글을 화면에 렌더링 하게 되고
+// 그 아래에는 텍스트 입력 컴포넌트와 버튼 컴포넌트를 이용해 댓글을 작성할 수 있도록 UI를 제공함.
+function PostViewPage(props) {
+    const navigate = useNavigate();
+    const { postId } = useParams();
+
+    const post = data.find((item) => {
+        return item.id == postId;
+    });
+
+    const [comment, setComment] = useState('');
+
+    return (
+        <Wrapper>
+            <Container>
+                <Button
+                    title='뒤로 가기'
+                    onClick={() => {
+                        navigate('/');
+                    }}
+                />
+                <PostContainer>
+                    <TitleText>{post.title}</TitleText>
+                    <ContentText>{post.content}</ContentText>
+                </PostContainer>
+
+                <CommentLabel>댓글</CommentLabel>
+                <CommentList comments={post.comments} />
+
+                <TextInput
+                    height={40}
+                    value={comment}
+                    onChange={(event) => {
+                        setComment(event.target.value);
+                    }}
+                />
+                <Button
+                    title='댓글 작성하기'
+                    onClick={() => {
+                        navigate('/');
+                    }}
+                />
+            </Container>
+        </Wrapper>
+    );
+}
+
+export default PostViewPage;
+---
+React Router Dom은 react를 위한 라우팅 라이브러리임.
+React 라우트돔은 이러한 라우팅을 쉽게 구현할 수 있도록 React 컴포넌트 형태로 제공해주는 라이브러리임.
+경로값이 없이 그냥 사이트 메인으로 접속하게 되면 index라는 라우트로 라우팅됨.
+리액트 라우터 돔에서는 페이지 이동을 위해서 useNavigate라는 훅을 제공함.
+
+<BrowserRouter>
+	<Routes>
+		<Route index element={<MainPage />} />
+		<Route path="places" element={<PlacePAge />} />
+		<Route path="games" element={<GamePage />} />
+	</Routes>
+</BrowserRouter>

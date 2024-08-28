@@ -1,0 +1,23 @@
+(실습) 미니 블로그 기획, 프로젝트 생성 및 필요한 패키지 설치
+
+개발 시작하기 전에 정해야 할 것들
+
+미니 블로그에 필요한 기능
+- 글 목록 보기 기능 (리스트 기능)
+- 글 보기 기능
+- 댓글 보기 기능
+- 글 작성 기능
+- 댓글 작성 기능
+
+---
+create-react-app을 사용해 프로젝트 생성
+npx create-react-app mini-blog
+---
+(실습) 필요한 패키지 설치
+여기에서 --save option은 지금 설치하는 패키지들을 package.json 파일이 관리하는 의존성 목록에 저장하겠다는 의미
+
+react-router-dom v6 (react-router-dom은 리액트 앱에서 페이지 전환을 위해 사용하는 패키지)
+npm install --save react-router-dom
+
+styled-components v5 (styled-component는 앞에서 배운 것처럼 스타일링을 위한 라이브러리)
+npm install --save styled-components

@@ -1,0 +1,56 @@
+56. (실습) App.js 파일 수정, 애플리케이션 실행하기, Production 빌드하기
+
+(App.js)
+import {
+    BrowserRouter,
+    Routes,
+    Route
+} from "react-router-dom";
+import styled from "styled-components";
+// Pages
+import MainPage from './component/page/MainPage';
+import PostWritePage from './component/page/PostWritePage';
+import PostViewPage from './component/page/PostViewPage';
+
+const MainTitleText = styled.p`
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+`;
+
+// React Router DOM을 이용해 총 3가지의 패스에 대해서 라우팅을 제공하고 있음.
+// 인덱스 경로인 /로 접속하면 메인 페이지 컴포넌트를 보여주고
+// /post/write로 접속하면 post-write 페이지 컴포넌트를 부여주고
+// /post-id로 접속하면 post-view 페이지 컴포넌트를 보여줌.
+// :postid는 동적으로 변하는 파라미터를 위한 값임
+function App(props) {
+    return (
+        <BrowserRouter>
+            <MainTitleText>POP의 미니 블로그</MainTitleText>
+            <Routes>
+                <Route index element={<MainPage />} />
+                <Route path="post-write" element={<PostWritePage />} />
+                <Route path="post/:postId" element={<PostViewPage />} />
+            </Routes>
+        </BrowserRouter>
+    );
+}
+
+export default App;
+---
+(실습) 애플리케이션 실행하기
+npm start
+---
+빌드는 우리가 작성한 코드와 애플리케이션이 사용하는 이미지, CSS 파일 등의 파일을 모두 모아서 패키징 하는 과정
+
+npm run build
+---
+생성된 빌드 파일들을 이용해서 웹 애플리케이션을 실행 해보기 전에
+sub 라는 패키지를 설치해야함
+sub는 이름 그대로 static 파일들을 서빙해주는 역할을 하는 프로그램임.
+-g옵션을 넣어 글로벌 모드로 서브 패키지를 설치하며, 글로벌 모드로 설치하게 되면 각 프로젝트 폴더 내에 설치되는 것이 아니라
+현재 사용 중인 컴퓨터의 다른 경로 어디에서든지 사용할 수 있게 됨.
+---
+배포란? 빌드를 통해서 생성된 정적인 파일들을 배포하려는 서버에 올리는 과정이라고 이해하면 됨.
+
+npm install -g serve

@@ -1,0 +1,7 @@
+54. (실습) 가짜 데이터 만들기
+
+백엔드에 해당하는 데이터는 가짜 데이터로 대체...
+하기의 링크로 접속하여, 내용 복사
+https://raw.githubusercontent.com/soaple/mini-blog/master/src/data.json
+
+복사된 내용을 src/data.json 파일을 생성하여 내용 붙혀넣기!
