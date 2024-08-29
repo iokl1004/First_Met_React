@@ -1,0 +1,31 @@
+60. 클라이언트와 서버 렌더링 API 업데이트
+
+// 기존방식 (리액트 버전 17)
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>,
+	document.getElementById('root')
+);
+---
+// 새로운 방식 (리액트 버전 18)
+// react-domm/client 라는 패키지가 새롭게 추가 되었으며, create-root 함수를 사용하여 렌더링을 하게 됨.
+
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>
+);
+---
+리액트 DOM 서버
+renderToPipeableStream
+ - NodeJS 환경에서 스트리밍을 위한 함수
+RENDERtOrEADABLEsTREAM
+ - eDGE RUNTIME 환경(예:Deno, Cloudflare workers)을 위한 함수
