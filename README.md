@@ -7,7 +7,7 @@
 3. 강사 : Inje Lee (소플)
 4. 기간 : 2024/08/19(월) ~ ING
 5. 사용 Tool : VS Code
-6. 기술 스택 : Java Script, Node.JS, React JS
+6. 기술 스택 : Java Script, React JS
 
 # 2. 일일 강의 진도
 
